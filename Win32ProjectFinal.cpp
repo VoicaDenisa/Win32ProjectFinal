@@ -116,6 +116,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    HWND hWnd = CreateWindowW(szWindowClass, (WCHAR*)"Calculatorul de drumuri DLV", WS_OVERLAPPEDWINDOW | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX,
       CW_USEDEFAULT, 0, 900, 700, NULL, NULL, hInstance, NULL);
+   
    if (!hWnd)
    {
       return FALSE;
@@ -156,7 +157,6 @@ void GamePaint(HDC hDC)
 	LineTo(hDC, 150, 20);
 	MoveToEx(hDC, 120, 20, NULL);
 	LineTo(hDC, 300, 20);
-	
 }
 void floydWarshall(int graph[N][N])
 {
@@ -186,6 +186,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	HWND buton1, buton2;
 	HWND gata1, gata2,floyd;
 	int flag = 0;
+
     switch (message)
     {
 	case WM_CREATE: 
@@ -317,6 +318,16 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         {
             PAINTSTRUCT ps;
             HDC hDC = BeginPaint(hWnd, &ps);
+			TextOut(hDC, 210, 5, TEXT(" 11"), sizeof(int));
+			TextOut(hDC, 93, 120, TEXT(" 10"), sizeof(int));
+			TextOut(hDC, 210, 150, TEXT(" 15"), sizeof(int));
+			TextOut(hDC, 220, 223, TEXT("  8"), sizeof(int));
+			TextOut(hDC, 332, 180, TEXT("  9"), sizeof(int));
+			TextOut(hDC, 405, 227, TEXT("  5"), sizeof(int));
+			TextOut(hDC, 500, 180, TEXT("  6"), sizeof(int));
+			TextOut(hDC, 315, 60, TEXT("  7"), sizeof(int));
+			TextOut(hDC, 250, 40, TEXT(" 20"), sizeof(int));
+			TextOut(hDC, 400, 65, TEXT(" 12"), sizeof(int));
 			GamePaint(hDC);
             EndPaint(hWnd, &ps);
         }
