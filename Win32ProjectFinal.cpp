@@ -23,7 +23,7 @@ int graph[N][N] = { { 0,   INF,  20, 10, 11, INF, INF },
 				  { INF,   0,  INF, 15, 7, INF, 9 },
 				  { INF,   INF,  0, INF, 12, 6, INF },
 				  { 10,   15,  INF, 0, INF, INF, 8 },
-				  { 10,   7,  12, INF, 0, INF, INF },
+				  { 11,   7,  12, INF, 0, INF, INF },
 				  { INF,   INF,  6, INF, INF, 0, 5 },
 				  { INF,   9,  INF, 8, INF, 5, 0 },
 };
@@ -220,7 +220,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 		gata2 = CreateWindow("BUTTON", "GATA", WS_BORDER | WS_CHILD | WS_VISIBLE, 300, 500, 80, 30, hWnd, (HMENU)IDM_GATA2, GetModuleHandle(NULL), NULL);
 
-		floyd = CreateWindow("BUTTON", "CALCULEAZA", WS_BORDER | WS_CHILD | WS_VISIBLE, 500, 550, 100,30, hWnd, (HMENU)IDM_FLOYD, GetModuleHandle(NULL), NULL);
+		floyd = CreateWindow("BUTTON", "CALCULEAZA", WS_BORDER | WS_CHILD | WS_VISIBLE, 600, 550, 100,30, hWnd, (HMENU)IDM_FLOYD, GetModuleHandle(NULL), NULL);
 	}
 	break;
     case WM_COMMAND:
@@ -284,6 +284,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 				else
 				{
 					MessageBox(hWnd, "", "Ati introdus un obiectiv existent!", MB_OK);
+					MessageBox(hWnd, "", "Apasati butonul calculeaza pentru a afisa costul minim dintre obiectivele introduse!", MB_OK);
 				}
 				break;
 			case IDM_FLOYD:
