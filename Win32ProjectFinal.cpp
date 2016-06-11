@@ -1,7 +1,4 @@
-﻿// Win32ProjectFinal.cpp : Defines the entry point for the application.
-//
-
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "Win32ProjectFinal.h"
 
 #define MAX_LOADSTRING 100
